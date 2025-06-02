@@ -1,0 +1,27 @@
+<div style="display: flex; justify-content: center">
+  <p style="font-size: 25px; color: purple">Style Binding (class => view)</p>
+</div>
+<div style="color: blue">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo amet aperiam
+  quia
+</div>
+
+<div [style.color]="textColor">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo amet aperiam
+  quia
+</div>
+<div [style.fontSize]="textSize">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo amet aperiam
+  quia
+</div>
+
+<div [ngStyle]="false ? { fontSize: textSize } : { color: textColor }">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis corporis maxime
+  rem magnam i
+</div>
+
+<div [ngStyle]="myStyles">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae veniam
+  vero corrupti ullam accusantium ratione vel doloribus praesentium similique
+  non! Nemo odio quo in quos, non labore ipsam numquam praesentium!
+</div>
