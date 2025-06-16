@@ -1,0 +1,176 @@
+<div class="container">
+  <div style="display: flex; justify-content: center">
+    <p style="font-size: 25px; color: purple">Event Binding (View => Class)</p>
+  </div>
+
+  <!-- Click Event -->
+  <div>
+    <!-- <button class="btn btn-info">Bootstrap</button>
+  <button mat-button>Angular Basic</button>
+  <button mat-flat-button color="primary">Angular Flat</button> -->
+    <button mat-raised-button color="accent" (click)="getName()">
+      Display Name
+    </button>
+    <button mat-raised-button color="primary" (click)="clearName()">
+      Clear Name
+    </button>
+    <!-- <button mat-stroked-button color="warn">Angular Stroked</button> -->
+  </div>
+  <p>Name: {{ name }}</p>
+
+  <!-- Double Click -->
+  <button mat-stroked-button (dblclick)="onDoubleClick()">
+    Double Click Me
+  </button>
+  <p>Action: {{ result }}</p>
+
+  <!-- Input Event -->
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Something</mat-label>
+    <!-- <input type="text" matInput (input)="onInput($event)" /> -->
+
+    <input type="text" matInput (input)="onInput($event.target.value)" />
+  </mat-form-field>
+  <p>Input Value: {{ inputValue }}</p>
+
+  <!-- Change Events for Select-->
+  <mat-form-field appearance="outline">
+    <mat-label>Select...</mat-label>
+    <mat-select (selectionChange)="onChange($event)">
+      <mat-option value="Apple">Apple</mat-option>
+      <mat-option value="Banana">Banana</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>You selected: {{ selectionValue }}</p>
+
+  <!-- Change Event for Checkbox -->
+
+  <mat-checkbox (change)="onCheckboxChange($event)">
+    Accept Terms and Condition
+  </mat-checkbox>
+  <p>Check box Status: {{ isChecked }}</p>
+
+  <!-- Change event for radio -->
+  <mat-radio-group (change)="onGenderChange($event)">
+    <mat-radio-button value="Male" checked>Male</mat-radio-button>
+    <mat-radio-button value="Female">Female</mat-radio-button>
+  </mat-radio-group>
+
+  <p>Selected Gender : {{ selectedGender }}</p>
+
+  <!-- Key Events - keyup  -->
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Something</mat-label>
+    <input matInput (keyup)="onKeyUp($event)" />
+  </mat-form-field>
+  <p style="font-size: 30px; color: orangered">
+    Keyup Value : {{ keyupValue }}
+  </p>
+
+  <!-- Key Events - keydown -->
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Something</mat-label>
+    <input matInput (keydown)="onKeyDown($event)" />
+  </mat-form-field>
+  <p style="font-size: 30px; color: green">
+    KeyDown Value : {{ keydownValue }}
+  </p>
+
+  <!-- Key Events 'Enter' key -->
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Something</mat-label>
+    <input matInput (keyup.enter)="onEnterKey()" />
+  </mat-form-field>
+  <p style="font-size: 30px; color: green">
+    Key Enter Value : {{ keyEnterValue }}
+  </p>
+
+  <!-- Focus and Blur -->
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Something</mat-label>
+    <input matInput (focus)="onFocus()" (blur)="onBlur()" />
+  </mat-form-field>
+  <p style="font-size: 30px; color: blue">Focus Status : {{ focusStatus }}</p>
+
+  <!-- Right Click/ Contex Menu -->
+  <div
+    style="display: flex; justify-content: center"
+    (contextmenu)="onRightClick($event)"
+  >
+    <p
+      style="
+        width: 25%;
+        height: 50px;
+        background-color: rgba(110, 68, 15, 1);
+        cursor: pointer;
+        color: white;
+      "
+    >
+      Right Click Me
+    </p>
+  </div>
+
+  <p style="font-size: 30px; color: blueviolet">
+    Context Value: {{ contextValue }}
+  </p>
+
+  <!-- Drag & Drop -->
+
+  <div
+    id="dragItem"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      background-color: rgb(104, 15, 110);
+      width: 120px;
+      color: #fff;
+      cursor: grab;
+      margin-bottom: 20px;
+    "
+    draggable="true"
+    (dragstart)="onDragStart($event)"
+  >
+    Drag Me
+  </div>
+
+  <div
+    id="dropZone"
+    style="
+      height: 150px;
+      background-color: #f9f1fc;
+      width: 320px;
+      border: 2px dashed purple;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #6a0dad;
+      font-weight: bold;
+    "
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event)"
+  >
+    Drop Here
+  </div>
+  <p>Drag Status: {{ dragStatus }}</p>
+</div>
+
+<div
+  style="
+    height: 100px;
+    background-color: bisque;
+    overflow: auto;
+    margin: 20px auto;
+    width: 500px;
+  "
+  (scroll)="onScroll($event)"
+>
+  <div style="height: 500px">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur autem
+    saepe laborum tempora reprehenderit accusamus ea rerum quasi velit ad fugiat
+    eaque odio dolorum quis placeat labore veniam, officiis impedit.
+  </div>
+</div>
+<p>Scroll Status: {{ scrollStatus }}</p>

@@ -1,0 +1,26 @@
+<div style="display: flex; justify-content: center">
+  <p style="font-size: 25px; color: purple">Template Ref. Variables</p>
+</div>
+
+<div class="container">
+  <mat-form-field appearance="outline">
+    <mat-label>Enter something</mat-label>
+    <input matInput #inputValue />
+  </mat-form-field>
+  <p>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="getInputValue(inputValue.value)"
+    >
+      Click Me
+    </button>
+  </p>
+
+  <p>Input Message: {{ message() }}</p>
+  <mat-form-field appearance="outline">
+    <mat-label>Two-wayData binding</mat-label>
+    <input matInput [(ngModel)]="message2" />
+  </mat-form-field>
+  <p>With Two-Way Data Binding: {{ message2() }}</p>
+</div>
