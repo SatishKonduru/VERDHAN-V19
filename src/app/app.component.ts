@@ -7,10 +7,12 @@ import { StyleBindingComponent } from './components/style-binding/style-binding.
 import { ClassBindingComponent } from './components/class-binding/class-binding.component';
 import { EventBindingComponent } from './components/event-binding/event-binding.component';
 import { TempRefVariablesComponent } from './components/temp-ref-variables/temp-ref-variables.component';
+import { IfComponent } from './components/if/if.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TempRefVariablesComponent],
+  imports: [RouterOutlet, SwitchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
