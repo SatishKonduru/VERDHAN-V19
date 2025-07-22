@@ -9,10 +9,11 @@ import { EventBindingComponent } from './components/event-binding/event-binding.
 import { TempRefVariablesComponent } from './components/temp-ref-variables/temp-ref-variables.component';
 import { IfComponent } from './components/if/if.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { ForComponent } from './components/for/for.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SwitchComponent],
+  imports: [RouterOutlet, ForComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
