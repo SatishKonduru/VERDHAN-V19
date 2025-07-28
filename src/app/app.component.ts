@@ -10,10 +10,11 @@ import { TempRefVariablesComponent } from './components/temp-ref-variables/temp-
 import { IfComponent } from './components/if/if.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { ForComponent } from './components/for/for.component';
+import { SenderComponent } from './components/sender/sender.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ForComponent],
+  imports: [RouterOutlet, SenderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
