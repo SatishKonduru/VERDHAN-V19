@@ -1,0 +1,18 @@
+<div class="container">
+  <div style="border: 2px solid blue; padding: 10px; margin-top: 20px">
+    <h2>👨🏼I am Parent</h2>
+    <!-- Child Placeholder -->
+
+    <ng-template #childHost></ng-template>
+
+    <button mat-raised-button (click)="callChildMethod()">
+      Call Child's Method
+    </button>
+
+    <p>
+      <strong>NOTE:</strong> Child is created dynamically and recevies input via
+      signals
+    </p>
+    <p><strong>Child Message: </strong> {{ childMessage }}</p>
+  </div>
+</div>
